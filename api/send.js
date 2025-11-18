@@ -5,8 +5,8 @@ export default async function handler(req, res) {
 
     const { name, contact, subject } = req.body;
 
-    const TOKEN = process.env.TG_TOKEN;   // ← токен из переменных окружения
-    const CHAT_ID = process.env.CHAT_ID;  // ← chat_id тоже скрыт
+    const TOKEN = process.env.TG_TOKEN;   
+    const CHAT_ID = process.env.CHAT_ID;  
 
     const message =
 `📝 Новая заявка на занятие
