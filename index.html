@@ -155,36 +155,36 @@ button:hover {
 </form>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
+document.querySelector("form").addEventListener("submit", async function(e){
+    e.preventDefault();
 
-  form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    const name = document.querySelector("#name").value.trim();
+    const contact = document.querySelector("#contact").value.trim();
+    const subject = document.querySelector("#subject").value.trim();
 
-      const name = document.querySelector("#name").value.trim();
-      const contact = document.querySelector("#contact").value.trim();
-      const subject = document.querySelector("#subject").value;
+    try {
+        const response = await fetch("/api/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, contact, subject })
+        });
 
-      const data = { name, contact, subject };
+        const data = await response.json();
 
-      try {
-          const response = await fetch("/api/send", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(data)
-          });
+        if (!response.ok) {
+            throw new Error(data.error || "Ошибка запроса");
+        }
 
-          if (!response.ok) throw new Error("Ошибка сервера");
+        alert("Заявка успешно отправлена!");
+        e.target.reset();
 
-          alert("Заявка отправлена!");
-          form.reset();
-      } catch (error) {
-          console.error(error);
-          alert("Ошибка соединения!");
-      }
-  });
+    } catch (error) {
+        console.error(error);
+        alert("Ошибка отправки на сервер! Проверьте соединение или настройки.");
+    }
 });
 </script>
+
 
 
 
