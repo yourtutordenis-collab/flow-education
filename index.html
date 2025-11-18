@@ -172,7 +172,7 @@ document.querySelector("form").addEventListener("submit", async function(e){
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.error || "Ошибка запроса");
+            throw new Error(data.error || "Ошибка отправки");
         }
 
         alert("Заявка успешно отправлена!");
@@ -180,9 +180,10 @@ document.querySelector("form").addEventListener("submit", async function(e){
 
     } catch (error) {
         console.error(error);
-        alert("Ошибка отправки на сервер! Проверьте соединение или настройки.");
+        alert("Ошибка! Проверьте соединение или настройки сервера.");
     }
 });
+
 </script>
 
 
