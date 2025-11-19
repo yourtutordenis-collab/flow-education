@@ -170,32 +170,6 @@ button:hover {
 
 </style>
 </head>
-<script>
-const pcTrack = document.querySelector('.pc-track');
-const pcItems = Array.from(pcTrack.children);
-let pcIndex = 0;
-
-function pcUpdate() {
-    pcTrack.style.transform = `translateX(-${pcIndex * 100}%)`;
-    pcTrack.style.transition = "0.6s";
-}
-
-document.querySelector('.pc-next').addEventListener('click', () => {
-    pcIndex = (pcIndex + 1) % pcItems.length;
-    pcUpdate();
-});
-
-document.querySelector('.pc-prev').addEventListener('click', () => {
-    pcIndex = (pcIndex - 1 + pcItems.length) % pcItems.length;
-    pcUpdate();
-});
-
-// Автопрокрутка каждые 5 секунд
-setInterval(() => {
-    pcIndex = (pcIndex + 1) % pcItems.length;
-    pcUpdate();
-}, 5000);
-</script>
 
 <body>
 
@@ -301,6 +275,34 @@ document.querySelector("form").addEventListener("submit", async function(e){
 
 </script>
 
+<script>
+const track = document.querySelector(".pc-track");
+const items = document.querySelectorAll(".pc-item");
+
+const btnPrev = document.querySelector(".pc-prev");
+const btnNext = document.querySelector(".pc-next");
+
+let index = 0;
+
+function updateCarousel() {
+    const width = items[0].clientWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+}
+
+btnNext.addEventListener("click", () => {
+    index++;
+    if (index >= items.length) index = 0; // зацикливание
+    updateCarousel();
+});
+
+btnPrev.addEventListener("click", () => {
+    index--;
+    if (index < 0) index = items.length - 1; // назад по кругу
+    updateCarousel();
+});
+
+window.addEventListener("resize", updateCarousel);
+</script>
 
 
 
