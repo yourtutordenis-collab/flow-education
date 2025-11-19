@@ -128,6 +128,27 @@ background: #FF8A42; /* мягкий оранжевый */
 }
 
 
+.telegram-block {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.telegram-block p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #0057D9;
+    font-weight: 600;
+}
+
+.tg-icon {
+    width: 60px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.tg-icon:hover {
+    transform: scale(1.15);
+}
 
     input, select {
     width: 100%;
@@ -210,6 +231,13 @@ button:hover {
 
     <button type="submit">Отправить заявку</button>
 </form>
+    <div class="telegram-block">
+    <a href="https://t.me/floweducation" target="_blank">
+        <img src="/images/telegram.png" class="tg-icon" alt="Telegram">
+    </a>
+    <p>Наш Telegram-канал</p>
+</div>
+
 <section class="photo-carousel-section">
     <h2>Отзывы родителей</h2>
 
