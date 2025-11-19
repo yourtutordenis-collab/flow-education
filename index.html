@@ -37,58 +37,62 @@ background: #FF8A42; /* мягкий оранжевый */
     font-weight: bold;
 }
 .photo-carousel-section {
-    max-width: 900px;
-    margin: 40px auto;
     text-align: center;
-}
-
-.photo-carousel-section h2 {
-    font-size: 28px;
-    color: #0057D9;
-    margin-bottom: 20px;
+    margin-top: 60px;
 }
 
 .photo-carousel {
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    gap: 20px;
+}
+
+.pc-btn {
+    width: 50px;
+    height: 50px;
+    background: #ff8a42;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.pc-btn:hover {
+    background: #ff7a2b;
+}
+
+.pc-prev::after { content: "‹"; }
+.pc-next::after { content: "›"; }
+
+.pc-track-wrapper {
+    width: 700px; /* ФИКС ШИРИНЫ — карусель работает корректно */
+    overflow: hidden;
 }
 
 .pc-track {
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    transition: transform 0.5s ease;
 }
 
 .pc-item {
-    min-width: 100%;
+    min-width: 700px;    /* ширина карточки ß= ширине окна */
     display: flex;
     justify-content: center;
 }
 
 .pc-item img {
     width: 100%;
-    max-width: 700px;
-    border-radius: 16px;
-    box-shadow: 0 5px 16px rgba(0,0,0,0.15);
-    border: 2px solid rgba(0,87,217,0.2);
+    border-radius: 12px;
+    object-fit: contain;
+    background: white;
 }
 
-.pc-btn {
-    background: #FF8A42;
-    border: none;
-    color: white;
-    font-size: 32px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.pc-btn:hover {
-    background: #FF7A2B;
-}
 
 
     .courses {
@@ -210,38 +214,24 @@ button:hover {
     <h2>Отзывы учеников</h2>
 
     <div class="photo-carousel">
-        <button class="pc-btn pc-prev">‹</button>
+        <button class="pc-btn pc-prev"></button>
 
-        <div class="pc-track">
-
-            <div class="pc-item">
-                <img src="/images/1.png" alt="review 1">
-            </div>
-
-            <div class="pc-item">
-                <img src="/images/2.png" alt="review 2">
-            </div>
-
-            <div class="pc-item">
-                <img src="/images/3.png" alt="review 3">
-            </div>
-            <div class="pc-item">
-                <img src="/images/4.png" alt="review 3">
-            </div>
-            <div class="pc-item">
-                <img src="/images/5.png" alt="review 3">
-            </div>
-            <div class="pc-item">
-                <img src="/images/6.png" alt="review 3">
-            </div>
-            <div class="pc-item">
-                <img src="/images/7.png" alt="review 3">
+        <div class="pc-track-wrapper">
+            <div class="pc-track">
+                <div class="pc-item"><img src="/images/1.png" alt=""></div>
+                <div class="pc-item"><img src="/images/2.png" alt=""></div>
+                <div class="pc-item"><img src="/images/3.png" alt=""></div>
+                <div class="pc-item"><img src="/images/4.png" alt=""></div>
+                <div class="pc-item"><img src="/images/5.png" alt=""></div>
+                <div class="pc-item"><img src="/images/6.png" alt=""></div>
+                <div class="pc-item"><img src="/images/7.png" alt=""></div>
             </div>
         </div>
 
-        <button class="pc-btn pc-next">›</button>
+        <button class="pc-btn pc-next"></button>
     </div>
 </section>
+
 
 <script>
 document.querySelector("form").addEventListener("submit", async function(e){
@@ -276,30 +266,28 @@ document.querySelector("form").addEventListener("submit", async function(e){
 </script>
 
 <script>
-const track = document.querySelector(".pc-track");
-const items = document.querySelectorAll(".pc-item");
-
-const btnPrev = document.querySelector(".pc-prev");
-const btnNext = document.querySelector(".pc-next");
-
 let index = 0;
 
-function updateCarousel() {
-    const width = items[0].clientWidth;
-    track.style.transform = `translateX(-${index * width}px)`;
-}
+const track = document.querySelector('.pc-track');
+const items = document.querySelectorAll('.pc-item');
+const prev = document.querySelector('.pc-prev');
+const next = document.querySelector('.pc-next');
 
-btnNext.addEventListener("click", () => {
+const width = 700; // та же ширина, что в CSS min-width
+
+next.addEventListener('click', () => {
     index++;
-    if (index >= items.length) index = 0; // зацикливание
-    updateCarousel();
+    if (index >= items.length) index = 0;
+    track.style.transform = `translateX(-${index * width}px)`;
 });
 
-btnPrev.addEventListener("click", () => {
+prev.addEventListener('click', () => {
     index--;
-    if (index < 0) index = items.length - 1; // назад по кругу
-    updateCarousel();
+    if (index < 0) index = items.length - 1;
+    track.style.transform = `translateX(-${index * width}px)`;
 });
+</script>
+
 
 window.addEventListener("resize", updateCarousel);
 </script>
