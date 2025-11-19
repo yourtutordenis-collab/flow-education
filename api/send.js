@@ -30,6 +30,24 @@ export default async function handler(req, res) {
         }
       })
     });
+await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    chat_id: CHAT_ID,
+    text: message,
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: "✔ Пометить как обработано",
+            callback_data: "done"
+          }
+        ]
+      ]
+    }
+  })
+});
 
     // Можно отправить уведомление обработчику
     await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery`, {
