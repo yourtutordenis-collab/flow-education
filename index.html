@@ -36,6 +36,59 @@ background: #FF8A42; /* мягкий оранжевый */
     font-size: 28px;
     font-weight: bold;
 }
+.photo-carousel-section {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.photo-carousel-section h2 {
+    font-size: 28px;
+    color: #0057D9;
+    margin-bottom: 20px;
+}
+
+.photo-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.pc-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.pc-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pc-item img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 16px;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.15);
+    border: 2px solid rgba(0,87,217,0.2);
+}
+
+.pc-btn {
+    background: #FF8A42;
+    border: none;
+    color: white;
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.pc-btn:hover {
+    background: #FF7A2B;
+}
 
 
     .courses {
@@ -153,6 +206,31 @@ button:hover {
 
     <button type="submit">Отправить заявку</button>
 </form>
+<section class="photo-carousel-section">
+    <h2>Отзывы учеников</h2>
+
+    <div class="photo-carousel">
+        <button class="pc-btn pc-prev">‹</button>
+
+        <div class="pc-track">
+
+            <div class="pc-item">
+                <img src="photo1.jpg" alt="review 1">
+            </div>
+
+            <div class="pc-item">
+                <img src="photo2.jpg" alt="review 2">
+            </div>
+
+            <div class="pc-item">
+                <img src="photo3.jpg" alt="review 3">
+            </div>
+
+        </div>
+
+        <button class="pc-btn pc-next">›</button>
+    </div>
+</section>
 
 <script>
 document.querySelector("form").addEventListener("submit", async function(e){
