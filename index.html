@@ -286,10 +286,11 @@ prev.addEventListener('click', () => {
     if (index < 0) index = items.length - 1;
     track.style.transform = `translateX(-${index * width}px)`;
 });
+    window.addEventListener("resize", updateCarousel);
 </script>
 
 
-window.addEventListener("resize", updateCarousel);
+
 </script>
 
 
