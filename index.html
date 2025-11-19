@@ -170,6 +170,32 @@ button:hover {
 
 </style>
 </head>
+<script>
+const pcTrack = document.querySelector('.pc-track');
+const pcItems = Array.from(pcTrack.children);
+let pcIndex = 0;
+
+function pcUpdate() {
+    pcTrack.style.transform = `translateX(-${pcIndex * 100}%)`;
+    pcTrack.style.transition = "0.6s";
+}
+
+document.querySelector('.pc-next').addEventListener('click', () => {
+    pcIndex = (pcIndex + 1) % pcItems.length;
+    pcUpdate();
+});
+
+document.querySelector('.pc-prev').addEventListener('click', () => {
+    pcIndex = (pcIndex - 1 + pcItems.length) % pcItems.length;
+    pcUpdate();
+});
+
+// Автопрокрутка каждые 5 секунд
+setInterval(() => {
+    pcIndex = (pcIndex + 1) % pcItems.length;
+    pcUpdate();
+}, 5000);
+</script>
 
 <body>
 
