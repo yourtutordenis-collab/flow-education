@@ -1,18 +1,19 @@
 export default async function handler(req, res) {
+  const TOKEN = process.env.TG_TOKEN;
+
   if (req.method !== "POST") {
     return res.status(200).send("OK");
   }
 
-  const TOKEN = process.env.TG_TOKEN;
+  const update = req.body;
 
-  const body = req.body;
+  // Если пользователь нажал кнопку
+  if (update.callback_query) {
+    const cb = update.callback_query;
+    const chatId = cb.message.chat.id;
+    const messageId = cb.message.message_id;
 
-  // --- Это callback кнопки ---
-  if (body.callback_query) {
-    const chatId = body.callback_query.message.chat.id;
-    const messageId = body.callback_query.message.message_id;
-
-    // обновляем текст сообщения
+    // Меняем кнопку
     await fetch(`https://api.telegram.org/bot${TOKEN}/editMessageReplyMarkup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,8 +24,8 @@ export default async function handler(req, res) {
           inline_keyboard: [
             [
               {
-                text: "✔️ Обработано",
-                callback_data: "done"
+                text: "✔ Обработано",
+                callback_data: "done_ok"
               }
             ]
           ]
@@ -32,17 +33,17 @@ export default async function handler(req, res) {
       })
     });
 
-    // отправляем Telegram уведомление, что нажали на кнопку
+    // Ответ Telegram (обязателен!)
     await fetch(`https://api.telegram.org/bot${TOKEN}/answerCallbackQuery`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        callback_query_id: body.callback_query.id,
+        callback_query_id: cb.id,
         text: "Заявка обработана!"
       })
     });
 
-    return res.status(200).send("callback processed");
+    return res.status(200).send("callback ok");
   }
 
   return res.status(200).send("OK");
