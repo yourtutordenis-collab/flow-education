@@ -190,6 +190,50 @@ button:hover {
     background: #FF7A2B; /* чуть темнее при наведении */
     box-shadow: 0 4px 10px rgba(255, 122, 43, 0.3);
 }
+.why-us {
+    max-width: 1000px;
+    margin: 50px auto 30px;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 28px;
+    color: #0057D9;
+    margin-bottom: 30px;
+}
+
+.why-items {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.why-card {
+    background: #FFFDF6;
+    width: 280px;
+    padding: 25px;
+    border-radius: 16px;
+    border: 2px solid rgba(0, 87, 217, 0.2);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.why-card img {
+    width: 55px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FF6A1A;
+}
+
+.why-card p {
+    font-size: 16px;
+    color: #3A2F2F;
+}
 
 
 
@@ -231,6 +275,33 @@ button:hover {
 
     <button type="submit">Отправить заявку</button>
 </form>
+
+    <section class="why-us">
+    <h2>Почему нас выбирают</h2>
+
+    <div class="why-items">
+
+        <div class="why-card">
+            <img src="/images/icons/star.png" alt="">
+            <h3>Профессиональные преподаватели</h3>
+            <p>Опыт работы 5+ лет, современные методики обучения.</p>
+        </div>
+
+        <div class="why-card">
+            <img src="/images/icons/rocket.png" alt="">
+            <h3>Быстрый результат</h3>
+            <p>Ученики улучшают оценки уже через 3–5 занятий.</p>
+        </div>
+
+        <div class="why-card">
+            <img src="/images/icons/heart.png" alt="">
+            <h3>Индивидуальный подход</h3>
+            <p>Каждый урок подбирается под уровень ребёнка.</p>
+        </div>
+
+    </div>
+</section>
+
     <div class="telegram-block">
     <a href="https://t.me/floweducation" target="_blank">
         <img src="/images/telegram.png" class="tg-icon" alt="Telegram">
