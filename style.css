@@ -8,6 +8,31 @@
   --text: #3A2F2F;
   --white: #FFFFFF;
 }
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ БЛОКА ПОЧЕМУ МЫ ===== */
+
+@media (max-width: 700px) {
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+    margin: 20px auto 40px;
+    width: 100%;
+  }
+
+  .feature {
+    width: 100%;
+    padding: 20px 18px;
+    border-radius: 16px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .feature h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+}
 
 /* БАЗА */
 
@@ -467,3 +492,4 @@ img {
 .feature.green  { background:#9CCB3B; }
 .feature.blue   { background:#0057D9; color:white; }
 .feature.pink   { background:#F3A6C8; }
+
