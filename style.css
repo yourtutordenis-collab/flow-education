@@ -1,0 +1,435 @@
+:root {
+  --blue: #0057D9;
+  --orange: #FF8A42;
+  --orange-strong: #FF6A1A;
+  --pink: #F3A6C8;
+  --green: #9CCB3B;
+  --bg: #FEF7D3;
+  --text: #3A2F2F;
+  --white: #FFFFFF;
+}
+
+/* БАЗА */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* ХЕДЕР */
+
+.site-header {
+  background: var(--orange);
+  color: var(--white);
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-cta {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--orange-strong);
+  font-weight: 600;
+}
+
+/* HERO */
+
+.hero {
+  padding: 40px 0 30px;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.hero-tags span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.05);
+  font-size: 13px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 180px;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, var(--pink), transparent),
+              radial-gradient(circle at bottom right, var(--green), transparent),
+              var(--white);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--orange-strong);
+  color: var(--white);
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.hero-badge span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.hero-badge strong {
+  font-size: 14px;
+}
+
+/* КНОПКА */
+
+.btn {
+  background: linear-gradient(180deg, #FF9A5C, #FF7A2B);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  display: inline-block;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 12px rgba(255, 122, 43, 0.4);
+  transform: translateY(-1px);
+}
+
+/* КУРСЫ */
+
+.courses {
+  padding: 20px 0 10px;
+}
+
+.courses h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.course-card {
+  padding: 18px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.course-rus { background: var(--pink); }
+.course-inf { background: var(--green); }
+.course-math { background: var(--orange-strong); color: var(--white); }
+.course-eng { background: var(--blue); color: var(--white); }
+.course-lit { background: var(--pink); }
+
+/* ПОЧЕМУ МЫ */
+
+.why {
+  padding: 30px 0 10px;
+}
+
+.why h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.why-item {
+  background: #FFFDF6;
+  border-radius: 16px;
+  padding: 18px 16px;
+  border: 1.5px solid rgba(0,87,217,0.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  text-align: left;
+}
+
+.why-item h3 {
+  margin: 10px 0 8px;
+  font-size: 16px;
+}
+
+.why-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.why-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* ФОРМА */
+
+.signup {
+  padding: 30px 0 10px;
+}
+
+.signup-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.3fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.signup-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.signup-text p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.signup-form {
+  background: #FFFDF6;
+  padding: 22px;
+  border-radius: 16px;
+  border: 2px solid rgba(0,87,217,0.18);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.signup-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0,87,217,0.4);
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--white);
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0,87,217,0.18);
+}
+
+.signup-form .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* TELEGRAM */
+
+.tg-row {
+  margin-top: 16px;
+}
+
+.tg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.tg-icon {
+  width: 40px;
+  height: 40px;
+  transition: 0.25s;
+}
+
+.tg-link:hover .tg-icon {
+  transform: scale(1.08);
+}
+
+/* КАРУСЕЛЬ ФОТО */
+
+.photo-carousel-section {
+  padding: 30px 0 40px;
+}
+
+.photo-carousel-section h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.photo-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pc-track-wrapper {
+  width: 100%;
+  max-width: 720px;
+  overflow: hidden;
+}
+
+.pc-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.pc-item {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pc-item img {
+  border-radius: 16px;
+  border: 2px solid rgba(0,87,217,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: var(--white);
+}
+
+.pc-btn {
+  background: var(--orange);
+  border: none;
+  color: var(--white);
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.pc-btn:hover {
+  background: var(--orange-strong);
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding: 16px 0 20px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 13px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 800px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .signup-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none; /* можно потом сделать бургер-меню */
+  }
+
+  .photo-carousel {
+    gap: 4px;
+  }
+
+  .pc-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
