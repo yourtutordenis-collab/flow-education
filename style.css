@@ -893,174 +893,62 @@ img {
         text-align: center;
     }
 }
-/* Бургер */
+/* Бургер показываем только на мобиле */
 .burger {
   display: none;
-  font-size: 28px;
   background: none;
   border: none;
+  font-size: 26px;
+  color: #fff;
   cursor: pointer;
-  color: white;
+}
+
+@media (max-width: 800px) {
+  .nav { display: none; }      /* прячем десктопное меню */
+  .burger { display: block; }  /* показываем бургер */
 }
 
 /* Мобильное меню */
 .mobile-nav {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100%;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  padding: 80px 20px 20px;
   background: var(--orange);
-  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: 0.35s ease;
-  z-index: 999;
-}
-
-.mobile-nav a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.mobile-nav.show {
-  right: 0;
-}
-
-/* показать бургер на телефоне */
-@media (max-width: 800px) {
-  .desktop-nav {
-    display: none;
-  }
-  .burger {
-    display: block;
-  }
-}
-/* --- БУРГЕР --- */
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 34px;
-  cursor: pointer;
-  color: white;
-}
-
-/* показываем бургер на телефоне */
-@media (max-width: 800px) {
-  .burger {
-    display: block;
-  }
-  #desktop-nav {
-    display: none;
-  }
-}
-
-/* --- МОБИЛЬНОЕ МЕНЮ --- */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -280px;
-  width: 260px;
-  height: 100%;
-  background: var(--orange);
-  padding: 80px 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 20px;
-  transition: right 0.35s ease;
-  z-index: 9999;
-}
-
-.mobile-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* меню открыто */
-.mobile-nav.show {
-  right: 0;
-}
-
-/* --- ЗАТЕМНЕНИЕ ФОНА --- */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 999;
-}
-
-.overlay.show {
-  opacity: 1;
-  pointer-events: all;
-}
-/* BURGER */
-.burger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-}
-
-/* показать бургер на мобилке */
-@media (max-width: 800px) {
-  .burger {
-    display: block;
-  }
-  #desktop-nav {
-    display: none;
-  }
-}
-
-/* MOBILE NAV */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 260px;
-  height: 100%;
-  background: var(--orange);
-  display: flex;
-  flex-direction: column;
-  padding: 60px 20px;
-  gap: 22px;
-  transition: right 0.35s ease;
+  transform: translateX(-100%);         /* спрятано слева */
+  transition: transform 0.3s ease;      /* анимация выезда */
   z-index: 1001;
 }
 
-.mobile-nav.show {
-  right: 0;
-}
-
 .mobile-nav a {
-  color: white;
-  font-size: 20px;
+  color: #fff;
+  font-size: 18px;
   text-decoration: none;
-  font-weight: 600;
 }
 
-/* ЗАТЕМНЕНИЕ */
+/* состояние «открыто» */
+.mobile-nav.show {
+  transform: translateX(0);
+}
+
+/* затемнение фона */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.4);
   opacity: 0;
   pointer-events: none;
-  transition: opacity .35s ease;
+  transition: opacity 0.3s ease;
   z-index: 1000;
 }
 
 .overlay.show {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: auto;
 }
+

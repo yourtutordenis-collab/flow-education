@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Flow Education — адаптивная версия</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
   <meta charset="UTF-8">
   <title>Flow Education — онлайн-запись на первое занятие</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<body>
-
-<!-- Мобильное меню -->
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="#courses">Курсы</a>
-  <a href="#why">Почему мы</a>
-  <a href="#how">Как проходят занятия</a>
-  <a href="#reviews">Отзывы</a>
-  <a href="#signup">Записаться</a>
-</nav>
 
 <header class="site-header">
   <div class="container header-inner">
-
     <div class="logo">Flow Education</div>
 
     <!-- ДЕСКТОПНОЕ МЕНЮ -->
@@ -40,13 +21,12 @@
       <a href="#signup" class="nav-cta">Записаться</a>
     </nav>
 
-    <!-- БУРГЕР -->
+    <!-- БУРГЕР (виден только на мобиле) -->
     <button class="burger" id="burger-btn">☰</button>
-
   </div>
 </header>
 
-<!-- МОБИЛЬНОЕ МЕНЮ -->
+<!-- МОБИЛЬНОЕ МЕНЮ (одно!) -->
 <nav class="mobile-nav" id="mobile-nav">
   <a href="#courses">Курсы</a>
   <a href="#why">Почему мы</a>
@@ -55,32 +35,13 @@
   <a href="#signup">Записаться</a>
 </nav>
 
-<!-- ЗАТЕМНЕНИЕ -->
+<!-- ЗАТЕМНЕНИЕ ФОНА -->
 <div class="overlay" id="overlay"></div>
-
-
-
-
-<!-- МОБИЛЬНОЕ МЕНЮ -->
-<nav class="mobile-nav" id="mobile-nav">
-  <a href="#courses">Курсы</a>
-  <a href="#why">Почему мы</a>
-  <a href="#how">Как проходят занятия</a>
-  <a href="#reviews">Отзывы</a>
-  <a href="#signup">Записаться</a>
-</nav>
-
-<!-- ЗАТЕМНЕНИЕ -->
-<div class="overlay" id="overlay"></div>
-
-<script>
-document.getElementById("burger-btn").addEventListener("click", () => {
-  document.getElementById("mobile-nav").classList.toggle("show");
-});
-</script>
-
 
 <main>
+
+
+
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
@@ -335,26 +296,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-const burger = document.getElementById("burger-btn");
+const burger   = document.getElementById("burger-btn");
 const mobileNav = document.getElementById("mobile-nav");
-const overlay = document.getElementById("overlay");
+const overlay  = document.getElementById("overlay");
 
 function toggleMenu() {
   mobileNav.classList.toggle("show");
   overlay.classList.toggle("show");
 }
 
-// открыть/закрыть по бургеру
+// открыть/закрыть по кнопке
 burger.addEventListener("click", toggleMenu);
 
-// закрыть по затемнению
+// закрыть кликом по фону
 overlay.addEventListener("click", toggleMenu);
 
-// закрыть после клика по ссылке
+// закрыть после клика по пункту меню
 document.querySelectorAll(".mobile-nav a").forEach(link => {
   link.addEventListener("click", toggleMenu);
 });
 </script>
+
 
 
 </body>
