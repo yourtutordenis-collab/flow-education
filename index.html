@@ -15,19 +15,41 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<script>
+document.getElementById("burger-btn").addEventListener("click", function() {
+  document.getElementById("mobile-nav").classList.toggle("show");
+});
+</script>
 
 <header class="site-header">
   <div class="container header-inner">
+
     <div class="logo">Flow Education</div>
-    <nav class="nav">
+
+    <!-- ДЕСКТОПНОЕ МЕНЮ -->
+    <nav class="nav" id="desktop-nav">
       <a href="#courses">Курсы</a>
       <a href="#why">Почему мы</a>
-        <a href="#how">Как проходят занятия</a>
+      <a href="#how">Как проходят занятия</a>
       <a href="#reviews">Отзывы</a>
       <a href="#signup" class="nav-cta">Записаться</a>
     </nav>
+
+    <!-- БУРГЕР -->
+    <button class="burger" id="burger-btn">☰</button>
+
   </div>
+
+  <!-- МОБИЛЬНОЕ МЕНЮ -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#courses">Курсы</a>
+    <a href="#why">Почему мы</a>
+    <a href="#how">Как проходят занятия</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#signup">Записаться</a>
+  </nav>
 </header>
+
 
 <main>
   <!-- HERO -->

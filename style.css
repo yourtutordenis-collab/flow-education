@@ -893,3 +893,42 @@ img {
         text-align: center;
     }
 }
+/* Бургер скрыт на компьютере */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Мобильное меню */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--orange);
+  padding: 15px 20px;
+}
+
+.mobile-nav a {
+  color: white;
+  padding: 8px 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 800px) {
+  .nav {
+    display: none; /* скрыть десктопное меню */
+  }
+
+  .burger {
+    display: block; /* показать бургер */
+  }
+
+  .mobile-nav.show {
+    display: flex; /* показываем меню */
+  }
+}
