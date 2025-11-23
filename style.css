@@ -823,3 +823,16 @@ img {
 .features .feature:hover {
     transform: scale(1.06);
 }
+.why-section {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: -10px; /* чтобы заголовок визуально прилипал к карточкам */
+}
+
+.section-title {
+    font-size: 32px;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
