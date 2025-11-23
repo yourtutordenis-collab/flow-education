@@ -420,9 +420,7 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .nav {
-    display: none; /* можно потом сделать бургер-меню */
-  }
+
 
   .photo-carousel {
     gap: 4px;
