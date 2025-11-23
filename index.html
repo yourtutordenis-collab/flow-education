@@ -22,6 +22,7 @@
     <nav class="nav">
       <a href="#courses">Курсы</a>
       <a href="#why">Почему мы</a>
+        <a href="#how">Как проходят занятия</a>
       <a href="#reviews">Отзывы</a>
       <a href="#signup" class="nav-cta">Записаться</a>
     </nav>
@@ -54,21 +55,43 @@
   </section>
 
   <!-- КУРСЫ -->
-  <section class="courses" id="courses">
-    <div class="container">
-      <h2>Направления</h2>
-      <div class="courses-grid">
-        <div class="course-card course-rus">Русский язык</div>
-        <div class="course-card course-inf">Информатика</div>
-        <div class="course-card course-math">Математика</div>
-        <div class="course-card course-eng">Английский</div>
-        <div class="course-card course-lit">Литература</div>
+ <section class="directions" id="courses">
+  <div class="container">
+    <h2 class="section-title">Направления</h2>
+
+    <div class="directions-window">
+      <div class="direction-card dir-rus">
+        <h3>Русский язык</h3>
+        <p>Уверенное письмо, грамотность и подготовка к экзаменам.</p>
+      </div>
+
+      <div class="direction-card dir-inf">
+        <h3>Информатика</h3>
+        <p>Алгоритмы, программирование и подготовка к ОГЭ/ЕГЭ.</p>
+      </div>
+
+      <div class="direction-card dir-math">
+        <h3>Математика</h3>
+        <p>Повышение успеваемости + разбор сложных тем.</p>
+      </div>
+
+      <div class="direction-card dir-eng">
+        <h3>Английский</h3>
+        <p>Живой язык + разговорная практика.</p>
+      </div>
+
+      <div class="direction-card dir-lit">
+        <h3>Литература</h3>
+        <p>Глубокое понимание текстов и уверенная подготовка.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ПОЧЕМУ НАС ВЫБИРАЮТ -->
-<section class="features">
+<section class="features" id="why">
+
 
     <div class="feature orange">
         <h3>Понятное объяснение</h3>
@@ -91,6 +114,31 @@
     </div>
 
 </section>
+<section class="lesson-process" id="how">
+
+    <h2>Как проходят занятия</h2>
+
+    <div class="lesson-grid">
+
+        <div class="lesson-card orange">
+            <p>Работаем на интерактивной доске — ребёнок вовлекается и лучше запоминает материал.</p>
+        </div>
+
+        <div class="lesson-card blue">
+            <p>Используем живые, современные материалы — никакой «сухой теории», всё понятным языком.</p>
+        </div>
+
+        <div class="lesson-card green">
+            <p>Закрепляем тему с помощью регулярных упражнений для уверенного усвоения.</p>
+        </div>
+
+        <div class="lesson-card pink">
+            <p>Много общаемся, смеёмся и создаём комфортную атмосферу, чтобы ребёнок чувствовал себя уверенно.</p>
+        </div>
+
+    </div>
+</section>
+
 
 
   <!-- ФОРМА ЗАПИСИ -->
@@ -126,12 +174,14 @@
 
     <!-- Иконка канала Telegram -->
     <div class="container tg-row">
-      <a href="https://t.me/floweducation" target="_blank" class="tg-link">
+      <a href="https://t.me/yourchannel" target="_blank" class="tg-link">
         <img src="/images/telegram.png" class="tg-icon" alt="Telegram">
         <span>Наш Telegram-канал для родителей и учеников</span>
       </a>
     </div>
   </section>
+
+
 
   <!-- ОТЗЫВЫ (ФОТО-КАРУСЕЛЬ) -->
   <section class="photo-carousel-section" id="reviews">
@@ -236,4 +286,3 @@ document.addEventListener("DOMContentLoaded", () => {
 </html>
 </body>
 </html>
-
