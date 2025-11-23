@@ -900,3 +900,18 @@ img {
     }
 }
 
+/* Мобильная адаптация WHY */
+@media (max-width: 600px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;   /* центрируем карточки */
+  }
+
+  .why-item {
+    width: 90%;              /* не на всю ширину */
+    max-width: 360px;        /* аккуратная карточка */
+    margin: 0 auto;
+    text-align: center;      /* выглядит лучше */
+  }
+}
+
