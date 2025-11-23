@@ -836,3 +836,67 @@ img {
     margin-bottom: 20px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
+/* ---------- WHY block (Почему мы) ---------- */
+
+.why-section-title h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 40px 0 20px;
+    color: var(--blue);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 16px;
+}
+
+/* Карточки */
+.feature {
+    padding: 25px;
+    border-radius: 20px;
+    color: #3A2F2F;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.35s cubic-bezier(.175,.885,.32,1.275); /* пружинка */
+    cursor: default;
+}
+
+/* Анимация при наведении — "пружинка" */
+.feature:hover {
+    transform: scale(1.06);
+}
+
+/* Цвета */
+.feature.orange { background:#FF8A42; }
+.feature.green  { background:#9CCB3B; }
+.feature.blue   { background:#0057D9; color:#fff; }
+.feature.pink   { background:#F3A6C8; }
+
+/* ----- Адаптив ----- */
+
+@media (max-width: 1100px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .features {
+        grid-template-columns: 1fr; /* по одной карточке */
+    }
+
+    .feature {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .why-section-title h2 {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+}
+
