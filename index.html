@@ -42,29 +42,39 @@
 
 
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h1>Первое занятие по информатике, математике и английскому</h1>
-        <p>Помогаем школьникам уверенно чувствовать себя на уроках и на экзаменах — в тёплой, поддерживающей атмосфере.</p>
-        <button class="btn hero-btn" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
-          Записаться на пробное
-        </button>
-        <div class="hero-tags">
-          <span>5–11 классы</span>
-          <span>ОГЭ / ЕГЭ / олимпиады</span>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <!-- сюда можно потом вставить иллюстрацию / фото -->
-        <div class="hero-badge">
-          <span>1-е занятие</span>
-          <strong>со скидкой</strong>
-        </div>
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+      <h1>Первое занятие по информатике, математике и английскому</h1>
+      <p>Помогаем школьникам уверенно чувствовать себя на уроках и экзаменах — в тёплой, поддерживающей атмосфере.</p>
+
+      <button class="btn hero-btn"
+              onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
+        Записаться на пробное
+      </button>
+
+      <div class="hero-tags">
+        <span>5–11 классы</span>
+        <span>ОГЭ / ЕГЭ / олимпиады</span>
       </div>
     </div>
-  </section>
+
+    <!-- ВИЗУАЛ HERO -->
+    <div class="hero-visual">
+      <img src="/images/boy.png"
+           alt="Flow Education student"
+           class="hero-image">
+
+      <div class="hero-badge">
+        <span>1-е занятие</span>
+        <strong>со скидкой</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- КУРСЫ -->
  <section class="directions" id="courses">
@@ -129,29 +139,29 @@
 
 </section>
 <section class="lesson-process" id="how">
-
     <h2>Как проходят занятия</h2>
 
-    <div class="lesson-grid">
+    <div class="lesson-window">
+        <div class="lesson-grid">
+            <div class="lesson-card orange">
+                <p>Работаем на интерактивной доске — ребёнок вовлекается и лучше запоминает материал.</p>
+            </div>
 
-        <div class="lesson-card orange">
-            <p>Работаем на интерактивной доске — ребёнок вовлекается и лучше запоминает материал.</p>
+            <div class="lesson-card blue">
+                <p>Используем живые, современные материалы — никакой «сухой теории», всё понятным языком.</p>
+            </div>
+
+            <div class="lesson-card green">
+                <p>Закрепляем тему с помощью регулярных упражнений для уверенного усвоения.</p>
+            </div>
+
+            <div class="lesson-card pink">
+                <p>Много общаемся, смеёмся и создаём комфортную атмосферу, чтобы ребёнок чувствовал себя уверенно.</p>
+            </div>
         </div>
-
-        <div class="lesson-card blue">
-            <p>Используем живые, современные материалы — никакой «сухой теории», всё понятным языком.</p>
-        </div>
-
-        <div class="lesson-card green">
-            <p>Закрепляем тему с помощью регулярных упражнений для уверенного усвоения.</p>
-        </div>
-
-        <div class="lesson-card pink">
-            <p>Много общаемся, смеёмся и создаём комфортную атмосферу, чтобы ребёнок чувствовал себя уверенно.</p>
-        </div>
-
     </div>
 </section>
+
 
 
 
@@ -188,7 +198,7 @@
 
     <!-- Иконка канала Telegram -->
     <div class="container tg-row">
-      <a href="https://t.me/floweducation" target="_blank" class="tg-link">
+      <a href="https://t.me/yourchannel" target="_blank" class="tg-link">
         <img src="/images/telegram.png" class="tg-icon" alt="Telegram">
         <span>Наш Telegram-канал для родителей и учеников</span>
       </a>
@@ -323,4 +333,3 @@ document.querySelectorAll(".mobile-nav a").forEach(link => {
 </html>
 </body>
 </html>
-

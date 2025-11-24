@@ -74,12 +74,23 @@ img {
 }
 
 .nav-cta {
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: var(--white);
-  color: var(--orange-strong);
+  background: linear-gradient(180deg, #4D9CFF, #0057D9);
+  color: white !important;
   font-weight: 600;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 87, 217, 0.28);
+  transition: 0.25s;
 }
+
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 87, 217, 0.45);
+}
+
+
 
 /* HERO */
 
@@ -118,6 +129,21 @@ img {
   background: rgba(0,0,0,0.02);
   border: 1px solid rgba(0,0,0,0.05);
   font-size: 13px;
+}
+.hero-visual {
+  position: relative;
+  min-height: 300px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F6BEDA, #C8E88D);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-visual {
@@ -759,47 +785,75 @@ img {
     padding: 16px;
   }
 }
+/* ---------- КАК ПРОХОДЯТ ЗАНЯТИЯ — НОВЫЙ СТИЛЬ ---------- */
+
 .lesson-process {
     padding: 40px 0;
     text-align: center;
+    background: var(--bg); /* общий фон */
+    box-shadow: none;      /* убрать тень блока */
+    border: none;          /* убрать рамки */
+}
+
+.lesson-window {
+  background: #fffdf6;
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border: 2px solid rgba(0,87,217,0.12);
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .lesson-process h2 {
     font-size: 32px;
-    color: #0057D9;
-    margin-bottom: 30px;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
+/* Сетка */
 .lesson-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
+    gap: 24px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 16px;
 }
 
+/* Карточка */
 .lesson-card {
-    padding: 25px 20px;
-    border-radius: 20px;
-    color: #3A2F2F;
-    font-size: 17px;
-    line-height: 1.45;
+    padding: 30px 24px;
+    border-radius: 22px;
+    font-size: 18px;
+    line-height: 1.55;
     box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
-    transform: translateY(0);
+    transform: scale(1);
+    transition: 0.35s cubic-bezier(.175,.885,.32,1.275); /* пружинка */
 }
 
-/* ЭФФЕКТ ПРИ НАВЕДЕНИИ */
+/* Эффект при наведении */
 .lesson-card:hover {
-    transform: scale(1.04);
+    transform: scale(1.06);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Цветные карточки в твоей палитре */
+/* Цвета в палитре сайта */
 .lesson-card.orange { background: #FFCC9E; }
 .lesson-card.blue   { background: #9EC4FF; }
 .lesson-card.green  { background: #C8E88D; }
 .lesson-card.pink   { background: #F6BEDA; }
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .lesson-card {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
 
 /* Мобильная адаптация */
 @media (max-width: 600px) {
